@@ -21,6 +21,7 @@ func main() {
 	r.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello"))
 	})
+	r.Get("/users", db.GetUsers)
 	err := http.ListenAndServe(":4321", r)
 	if err != nil {
 		fmt.Println("Error in creating server ", err)
