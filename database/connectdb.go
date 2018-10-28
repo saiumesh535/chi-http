@@ -10,16 +10,22 @@ type users struct {
 	Password string `bson:"password" json:"password"`
 }
 
-func ConnectMongoDB() []users {
-	url := "33"
+var dbConnection *mongodb.Session
+
+func EstablishConnection() {
+	url := "mongodb://saiumesh:saiumesh535@ds111410.mlab.com:11410/chi-http"
 	session, err := mongodb.Dial(url)
 	if err != nil {
-		return nil
+		panic("Error in connecting database!!")
 	} else {
-		var result []users
-		collection := session.DB("chi-http").C("users")
-		iter := collection.Find(bson.M{}).Limit(100).Iter()
-		iter.All(&result)
-		return result
+		dbConnection = session
 	}
+}
+
+func ConnectMongoDB() []users {
+	var result []users
+	collection := dbConnection.DB("chi-http").C("users")
+	iter := collection.Find(bson.M{})
+	iter.All(&result)
+	return result
 }
