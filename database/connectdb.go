@@ -1,6 +1,8 @@
 package database
 
 import (
+	"net/http"
+
 	mongodb "github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 )
@@ -28,4 +30,8 @@ func ConnectMongoDB() []users {
 	iter := collection.Find(bson.M{})
 	iter.All(&result)
 	return result
+}
+
+func GetUsers(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello"))
 }
