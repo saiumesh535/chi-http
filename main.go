@@ -13,6 +13,7 @@ import (
 func main() {
 	db.EstablishConnection()
 	r := chi.NewRouter()
+	r.NotFound(utils.Errorhandler)
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		users := db.ConnectMongoDB()
 		utils.JsonHeaders(w)
