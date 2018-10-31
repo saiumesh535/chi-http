@@ -6,21 +6,23 @@ import (
 	renderPkg "github.com/unrolled/render"
 )
 
-type ErrorMessage struct {
-	status  bool
-	message string
+//ErrorMessage for 404
+type errorMessage struct {
+	Status  bool
+	Message string
 }
 
 var render *renderPkg.Render
 
 func init() {
-	render = renderPkg.New() // pass options if you want
+	render = renderPkg.New()
 }
 
+// Errorhandler for 404
 func Errorhandler(w http.ResponseWriter, r *http.Request) {
-	response := map[string]interface{}{
-		"status":  false,
-		"message": "Doomed!!",
+	errorMessage := errorMessage {
+		Status: false,
+		Message: "Doomed!!",
 	}
-	render.JSON(w, 404, response)
+	render.JSON(w, 404, errorMessage)
 }
