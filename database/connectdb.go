@@ -16,3 +16,8 @@ func EstablishConnection() {
 		dbConnection = session
 	}
 }
+
+// GetDatabaseConnObject returns database connection
+func GetDatabaseConnObject() *mongodb.Session {
+	return dbConnection;
+}
