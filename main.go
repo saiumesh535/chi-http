@@ -6,6 +6,7 @@ import (
 	db "./database"
 	utils "./utils"
 	"github.com/go-chi/chi"
+	auth "./auth"
 )
 
 func init() {
@@ -22,6 +23,11 @@ func main() {
 	r := chi.NewRouter()
 	r.NotFound(utils.Errorhandler)
 	r.Get("/", welcome)
+
+
+	// all auth routers
+	r.Mount("/auth", auth.Handler())
+
 	err := http.ListenAndServe(":4321", r)
 	if err != nil {
 		fmt.Println("Error in creating server ", err)
