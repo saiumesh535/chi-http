@@ -7,6 +7,5 @@ import (
 
 // FindAll mongoDb query
 func FindAll(query interface{}, result interface{}) error {
-	dbConn := db.GetDatabaseConnObject()
-	return dbConn.DB("chi-http").C("users").Find(query).All(result)
+	return db.DbConnection.DB("chi-http").C("users").Find(query).All(result)
 }

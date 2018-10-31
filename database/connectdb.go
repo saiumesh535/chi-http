@@ -4,7 +4,7 @@ import (
 	mongodb "github.com/globalsign/mgo"
 )
 
-var dbConnection *mongodb.Session
+var DbConnection *mongodb.Session
 
 // EstablishConnection with MongoDB
 func EstablishConnection() {
@@ -13,11 +13,11 @@ func EstablishConnection() {
 	if err != nil {
 		panic("Error in connecting database!!")
 	} else {
-		dbConnection = session
+		DbConnection = session
 	}
 }
 
 // GetDatabaseConnObject returns database connection
 func GetDatabaseConnObject() *mongodb.Session {
-	return dbConnection;
+	return DbConnection;
 }
