@@ -22,17 +22,17 @@ func init() {
 // Login users
 func Login(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
-	var result []login
+	var result login
 	r.ParseForm()
 	loginData := login{
 		Username: r.FormValue("username"),
 		Password: r.FormValue("password"),
 	}
-	err := models.FindAll(&loginData, &result)
-	if err != nil {
+	err := models.FindOne(&loginData, &result)
+	if  err != nil && err.Error() != "not found" {
 		w.Write([]byte("Something wen't wrong"))
 	} else {
-		if result == nil {
+		if len(result.Password) == 0 {
 			render.JSON(w, 403, map[string]interface{}{
 				"status":  false,
 				"message": "yo!! check username and password",

@@ -16,7 +16,8 @@ func init() {
 
 // welcome router
 func welcome(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Welcome to Golang develpment!!"))
+	username := "saiumesh"
+	w.Write([]byte(fmt.Sprintf("Article %s has been created", username)))
 }
 
 func main() {
