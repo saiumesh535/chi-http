@@ -1,11 +1,10 @@
 # chi-http
+
 Chi-http example for golang
 
-
+[Chi](https://github.com/go-chi/chi) is great library for creating HTTP services and it has easy routing system.
 
 ## Motivation
-
-[Chi](https://github.com/go-chi/chi) is great library for creating HTTP services and it has easy routing system.
 
 When i started learning golang, it was little hard to find basic examples.
 This repository will try to address some problems that encountered while learning golang.
