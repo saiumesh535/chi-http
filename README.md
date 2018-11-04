@@ -11,7 +11,7 @@ This repository will try to address some problems that encountered while learnin
 
 This Repository will have basic examples to implement your APIs.
 
-#Table of Contents
+## Table of Contents
 * [main.go](https://github.com/saiumesh535/chi-http/blob/master/main.go)
 main.go file which bootstrap our project
 
