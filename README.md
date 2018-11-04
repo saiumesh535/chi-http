@@ -19,4 +19,4 @@ main.go file which bootstrap our project
 MongoDB connection example
 
 * [Auth](https://github.com/saiumesh535/chi-http/tree/master/auth)
-Folder contains login and sign up examples and also for routing Mount example.
+Folder contains login and sign up examples and also router Mount example.
