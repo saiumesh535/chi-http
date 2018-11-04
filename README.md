@@ -20,3 +20,10 @@ MongoDB connection example
 
 * [Auth](https://github.com/saiumesh535/chi-http/tree/master/auth)
 Folder contains login and sign up examples and also router Mount example.
+
+## some helpful resources for learning
+
+* [GoBooks] (https://github.com/dariubs/GoBooks)
+* [Golangbot] (https://golangbot.com/)
+* [JustForFunc: Programming in Go] (https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw/featured)
+* [Go by sentdex] (https://www.youtube.com/watch?v=G3PvTWRIhZA)
