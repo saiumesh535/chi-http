@@ -9,5 +9,6 @@ import (
 func Handler() http.Handler {
 	r := chi.NewRouter()
 	r.Post("/login", Login)
+	r.Post("/signup", Signup)
 	return r
 }

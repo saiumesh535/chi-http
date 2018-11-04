@@ -1,0 +1,17 @@
+POST http://localhost:4321/auth/login HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+{
+    "username": "saiumesh",
+    "password": "saiumesh"
+}
+
+
+
+GET  http://localhost:4321 HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+{
+    "username": "saiumesh",
+    "password": "saiumesh"
+}
