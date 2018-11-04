@@ -7,7 +7,7 @@ Chi-http example for golang
 ## Motivation
 
 When i started learning golang, it was little hard to find basic examples.
-This repository will try to address some problems that encountered while learning golang.
+This repository will try to address some problems that I encountered while learning golang.
 
 This Repository will have basic examples to implement your APIs.
 
@@ -16,7 +16,7 @@ This Repository will have basic examples to implement your APIs.
 main.go file which bootstrap our project
 
 * [database/connectdb](https://github.com/saiumesh535/chi-http/blob/master/database/connectdb.go)
-MongoDD connection example
+MongoDB connection example
 
 * [Auth](https://github.com/saiumesh535/chi-http/tree/master/auth)
 Folder contains login and sign up examples and also for routing Mount example.
