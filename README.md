@@ -6,7 +6,7 @@ Chi-http example for golang
 
 ## Motivation
 
-When i started learning golang, it was little hard to find basic examples.
+When I started learning golang, it was little difficult to find basic examples.
 This repository will try to address some problems that I encountered while learning golang.
 
 This Repository will have basic examples to implement your APIs.
