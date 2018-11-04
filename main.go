@@ -25,6 +25,9 @@ func main() {
 	r.NotFound(utils.Errorhandler)
 	r.Get("/", welcome)
 
+	// just for loadtesting purpose, don't use in production
+	// running command go run main.go loadTest.go
+	r.Get("/loadtest", LoadTest)
 
 	// all auth routers
 	r.Mount("/auth", auth.Handler())
