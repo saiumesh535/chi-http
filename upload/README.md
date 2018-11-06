@@ -3,6 +3,7 @@
 Here we will lean to upload multi part data to disk in golang
 
 
+* [uploadfile.go](https://github.com/saiumesh535/chi-http/blob/master/utils/uploadfiles.go) has Method which helps in uploading files. **do not use this example for uploading large file**
 
 ## Example
 curl -X POST \
