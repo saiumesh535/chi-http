@@ -14,7 +14,7 @@ func TextFiles(w http.ResponseWriter, r *http.Request) {
 		panic("reading file error")
 	}
 	defer fileResume.Close()
-	uploadErr := util.UploadFiles(fileHeader.Filename, fileResume);
+	uploadErr := util.UploadSmallFiles(fileHeader.Filename, fileResume);
 	if uploadErr != nil {
 		w.Write([]byte("something wen't wrong!!"))
 	} else {

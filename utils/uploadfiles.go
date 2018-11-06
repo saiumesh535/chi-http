@@ -7,8 +7,8 @@ import (
 	fpath "path/filepath"
 )
 
-// UploadFiles to given path
-func UploadFiles(filename string, file multipart.File) (err error) {
+// UploadSmallFiles to given path
+func UploadSmallFiles(filename string, file multipart.File) (err error) {
 	workDir, _ := os.Getwd()
 	filesDir := fpath.Join(workDir, "files", filename)
 	out, err := os.Create(filesDir)

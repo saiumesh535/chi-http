@@ -21,6 +21,8 @@ MongoDB connection example
 * [Auth](https://github.com/saiumesh535/chi-http/tree/master/auth)
 Folder contains login and sign up examples and also router Mount example.
 
+* [upload](https://github.com/saiumesh535/chi-http/tree/master/upload) Example for uploading files using golang
+
 ## some helpful resources for learning
 
 * [GoBooks](https://github.com/dariubs/GoBooks)
