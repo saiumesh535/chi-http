@@ -5,8 +5,8 @@ import (
 	util "../utils"
 )
 
-// TextFiles to given destination
-func TextFiles(w http.ResponseWriter, r *http.Request) {
+// FileUpload to given destination
+func FileUpload(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close();
 	r.ParseForm();
 	fileResume, fileHeader, err := r.FormFile("resume");
