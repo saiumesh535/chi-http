@@ -4,6 +4,7 @@ import (
 	mongodb "github.com/globalsign/mgo"
 )
 
+// DbConnection database connection
 var DbConnection *mongodb.Session
 
 // EstablishConnection with MongoDB

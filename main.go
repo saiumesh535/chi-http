@@ -5,6 +5,7 @@ import (
 	"net/http"
 	db "./database"
 	utils "./utils"
+	upload "./upload"
 	"github.com/go-chi/chi"
 	auth "./auth"
 )
@@ -27,10 +28,13 @@ func main() {
 
 	// just for loadtesting purpose, don't use in production
 	// running command go run main.go loadTest.go
-	r.Get("/loadtest", LoadTest)
+	// r.Get("/loadtest", LoadTest)
 
 	// all auth routers
 	r.Mount("/auth", auth.Handler())
+
+	// all upload files
+	r.Mount("/upload", upload.Handler())
 
 	err := http.ListenAndServe(":4321", r)
 	if err != nil {
