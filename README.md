@@ -24,7 +24,7 @@ Folder contains login and sign up examples and also router Mount example.
 * [download](https://github.com/saiumesh535/chi-http/blob/master/download/main.go)
 Folder contains Downloading files from golang server example
 
-* [static](https://github.com/saiumesh535/chi-http/blob/master/static/main.go)`
+* [static](https://github.com/saiumesh535/chi-http/blob/master/static/main.go)
 Folder contains example for serving static file to browser such as html/css
 
 * [upload](https://github.com/saiumesh535/chi-http/tree/master/upload) contains example for uploading files using golang
