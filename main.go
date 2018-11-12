@@ -3,8 +3,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
+	"path/filepath"
 	db "./database"
+	download "./download"
 	utils "./utils"
+	public "./static"
 	upload "./upload"
 	"github.com/go-chi/chi"
 	auth "./auth"
@@ -40,6 +44,15 @@ func main() {
 	r.NotFound(utils.Errorhandler)
 	r.Get("/", welcome)
 
+	// sending static files
+	workDir, _ := os.Getwd()
+	filesDir := filepath.Join(workDir, "public")
+	// now visit http://localhost:4321/public/
+	// it will serve index.html
+	// for http://localhost:4321/public/someother.html
+	// it will serve someother.html file
+	public.FileServer(r, "/public", http.Dir(filesDir))
+
 	// just for loadtesting purpose, don't use in production
 	// running command go run main.go loadTest.go
 	// r.Get("/loadtest", LoadTest)
@@ -49,6 +62,8 @@ func main() {
 
 	// all upload files
 	r.Mount("/upload", upload.Handler())
+
+	r.Get("/downloadFile", download.SmallFiles)
 
 	err := http.ListenAndServe(":4321", r)
 	if err != nil {
