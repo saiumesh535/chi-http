@@ -8,6 +8,7 @@ import (
 	upload "./upload"
 	"github.com/go-chi/chi"
 	auth "./auth"
+	cors "github.com/go-chi/cors"
 )
 
 func init() {
@@ -22,7 +23,20 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
 	r := chi.NewRouter()
+
+	cors := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"}, // you can add routes here www.example.com
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: true,
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
+	})
+
+	r.Use(cors.Handler)
+
 	r.NotFound(utils.Errorhandler)
 	r.Get("/", welcome)
 

@@ -28,5 +28,5 @@
     "rust.actionOnSave": "check",
     "vsicons.projectDetection.disableDetect": true,
     "git.autofetch": true,
-    "workbench.colorTheme": "Cobalt2"
+    "workbench.colorTheme": "Dracula"
   }
