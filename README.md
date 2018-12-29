@@ -13,7 +13,7 @@ This Repository will have basic examples to implement your APIs.
 
 ## Installation
 
-For installing all the dependencies run ** go get -d ./...  **
+For installing all the dependencies run **go get -d ./...**
 
 This project didn't update with go mods.
 
