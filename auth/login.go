@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"github.com/globalsign/mgo/bson"
 	"encoding/json"
 	"net/http"
 
@@ -16,7 +17,7 @@ type login struct {
 }
 
 // Loginresponse structure
-type Loginresponse struct{
+type Loginresponse struct {
 	Token string `json:"token"`
 }
 
@@ -31,30 +32,40 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var result login
 	r.ParseForm()
-	loginData := login{
-		Username: r.FormValue("username"),
-		Password: r.FormValue("password"),
+
+	loginData := bson.M{
+		"username": r.FormValue("username"),
 	}
 	err := models.FindOne(&loginData, &result, "users")
-	if  err != nil && err.Error() != "not found" {
+	if err != nil && err.Error() != "not found" {
 		w.Write([]byte("Something wen't wrong"))
 	} else {
-		if len(result.Password) == 0 {
+		if len(result.Username) == 0 {
 			render.JSON(w, 403, map[string]interface{}{
 				"status":  false,
 				"message": "yo!! check username and password",
 			})
 		} else {
-			out, _:= json.Marshal(result);
-			token, err := utils.CreateJwtToken(string(out))
-			if err != nil {
-				w.Write([]byte("Token wen't wrong"))
-			} else {
-				response := Loginresponse {
-					Token: token,
+			isVliadPassword := utils.CheckPasswordHash(r.FormValue("password"), result.Password)
+			if isVliadPassword {
+				out, _ := json.Marshal(result)
+				token, err := utils.CreateJwtToken(string(out))
+				if err != nil {
+					w.Write([]byte("Token wen't wrong"))
+				} else {
+					response := Loginresponse{
+						Token: token,
+					}
+					render.JSON(w, 200, &response)
 				}
-				render.JSON(w, 200, &response)
+			} else {
+				render.JSON(w, 403, map[string]interface{}{
+					"status":  false,
+					"message": "yo!! check username and password",
+				})
 			}
+
 		}
+
 	}
 }
