@@ -11,6 +11,12 @@ This repository will try to address some problems that I encountered while learn
 
 This Repository will have basic examples to implement your APIs.
 
+## Installation
+
+For installing all the dependencies run ** go get -d ./...  **
+
+This project didn't update with go mods.
+
 ## Table of Contents
 * [main.go](https://github.com/saiumesh535/chi-http/blob/master/main.go)
 main.go file which bootstrap our project

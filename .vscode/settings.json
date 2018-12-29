@@ -14,7 +14,7 @@
     "editor.renderWhitespace": "none",
     "workbench.editor.enablePreview": false,
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "rust.rustup": {
       "toolchain": "stable-x86_64-pc-windows-msvc",
