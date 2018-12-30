@@ -5,13 +5,15 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+
+	auth "./auth"
 	db "./database"
 	download "./download"
-	utils "./utils"
+	private "./private"
 	public "./static"
 	upload "./upload"
+	utils "./utils"
 	"github.com/go-chi/chi"
-	auth "./auth"
 	cors "github.com/go-chi/cors"
 )
 
@@ -53,10 +55,6 @@ func main() {
 	// it will serve someother.html file
 	public.FileServer(r, "/public", http.Dir(filesDir))
 
-	// just for loadtesting purpose, don't use in production
-	// running command go run main.go loadTest.go
-	// r.Get("/loadtest", LoadTest)
-
 	// all auth routers
 	r.Mount("/auth", auth.Handler())
 
@@ -64,6 +62,9 @@ func main() {
 	r.Mount("/upload", upload.Handler())
 
 	r.Get("/downloadFile", download.SmallFiles)
+
+	// private routes which requires jwt token
+	r.Mount("/private", private.Handler())
 
 	err := http.ListenAndServe(":4321", r)
 	if err != nil {

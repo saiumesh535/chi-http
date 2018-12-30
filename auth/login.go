@@ -1,9 +1,10 @@
 package auth
 
 import (
-	"github.com/globalsign/mgo/bson"
 	"encoding/json"
 	"net/http"
+
+	"github.com/globalsign/mgo/bson"
 
 	renderPkg "github.com/unrolled/render"
 
@@ -12,8 +13,9 @@ import (
 )
 
 type login struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
+	ID       bson.ObjectId `json:"id" bson:"_id,omitempty"`
+	Username string        `json:"username"`
+	Password string        `json:"password"`
 }
 
 // Loginresponse structure
@@ -48,7 +50,10 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		} else {
 			isVliadPassword := utils.CheckPasswordHash(r.FormValue("password"), result.Password)
 			if isVliadPassword {
-				out, _ := json.Marshal(result)
+				jwtData := map[string]string{
+					"id": result.ID.Hex(),
+				}
+				out, _ := json.Marshal(jwtData)
 				token, err := utils.CreateJwtToken(string(out))
 				if err != nil {
 					w.Write([]byte("Token wen't wrong"))
