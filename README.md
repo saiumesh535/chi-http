@@ -45,6 +45,9 @@ Folder contains example for serving static file to browser such as html/css
 
 * [upload](https://github.com/saiumesh535/chi-http/tree/master/upload) contains example for uploading files using golang
 
+* [Private](https://github.com/saiumesh535/chi-http/tree/master/private)
+Creating private routes for APIS, which requires JWT token
+
 ## some helpful resources for learning
 
 * [GoBooks](https://github.com/dariubs/GoBooks)
