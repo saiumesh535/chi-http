@@ -17,6 +17,16 @@ For installing all the dependencies run **go get -d ./...**
 
 This project didn't update with go mods.
 
+## start server
+
+You can start server by running command **go run main.go**
+
+if you want to restart server on file change follow below steps
+
+1. Install [realize](https://github.com/oxequa/realize) by running **go get github.com/oxequa/realize**
+
+2. start server by **realize start**
+
 ## Table of Contents
 * [main.go](https://github.com/saiumesh535/chi-http/blob/master/main.go)
 main.go file which bootstrap our project
