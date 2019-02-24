@@ -54,4 +54,4 @@ Creating private routes for APIS, which requires JWT token
 * [Golangbot](https://golangbot.com/)
 * [JustForFunc: Programming in Go](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw/featured)
 * [Go by sentdex](https://www.youtube.com/watch?v=G3PvTWRIhZA)
-* [Go rference book](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/preface.html)
+* [Go reference book](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/preface.html)
