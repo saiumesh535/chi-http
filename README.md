@@ -55,3 +55,8 @@ Creating private routes for APIS, which requires JWT token
 * [JustForFunc: Programming in Go](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw/featured)
 * [Go by sentdex](https://www.youtube.com/watch?v=G3PvTWRIhZA)
 * [Go reference book](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/preface.html)
+
+## Since working with JSON in golang is pretty confusing for many people, so making some of the good resources below.
+
+*[JSON and Golang APIs](https://github.com/corylanou/tns-restful-json-api)
+*[StackOverflow thread on JSON and Handling](https://stackoverflow.com/questions/15672556/handling-json-post-request-in-go)
