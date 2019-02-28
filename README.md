@@ -58,5 +58,5 @@ Creating private routes for APIS, which requires JWT token
 
 ## Since working with JSON in golang is pretty confusing for many people, so making some of the good resources below.
 
-*[JSON and Golang APIs](https://github.com/corylanou/tns-restful-json-api)
-*[StackOverflow thread on JSON and Handling](https://stackoverflow.com/questions/15672556/handling-json-post-request-in-go)
+* [JSON and Golang APIs](https://github.com/corylanou/tns-restful-json-api)
+* [StackOverflow thread on JSON and Handling](https://stackoverflow.com/questions/15672556/handling-json-post-request-in-go)
