@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
+	"runtime"
+
 	auth "./auth"
 	db "./database"
 	download "./download"
@@ -31,6 +33,9 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	r := chi.NewRouter()
+
+	n := runtime.NumCPU();
+	runtime.GOMAXPROCS(n);
 
 	cors := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // you can add routes here www.example.com
